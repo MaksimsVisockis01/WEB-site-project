@@ -8,7 +8,7 @@ class SignupContr extends Signup{
     private $pwd;
     private $pwdrepeat;
 
-    public function _construct($name, $email, $uid, $pwd, $pwdrepeat){
+    public function __construct($name, $email, $uid, $pwd, $pwdrepeat){
         //$this->'vatiable' is from signup.php form
         $this->name = $name;
         $this->email = $email;
@@ -57,9 +57,9 @@ class SignupContr extends Signup{
     private function invalidUid() {
         //$result;
         if (!preg_match("/^[a-zA-Z0-9]*$/", $this->uid)) {
-            $result = true;
-        }else{
             $result = false;
+        }else{
+            $result = true;
         }
         return $result;
     }
@@ -67,9 +67,9 @@ class SignupContr extends Signup{
     private function invalidEmail() {
         //$result;
         if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
-            $result = true;
-        }else{
             $result = false;
+        }else{
+            $result = true;
         }
         return $result;
     }
@@ -77,9 +77,9 @@ class SignupContr extends Signup{
     private function pwdMatch() {
         //$result;
         if ($this->pwd !== $this->pwdrepeat) {
-            $result = true;
-        }else{
             $result = false;
+        }else{
+            $result = true;
         }
         return $result;
     }
@@ -87,9 +87,9 @@ class SignupContr extends Signup{
     private function uidTakenCheck() {
         //$result;
         if (!$this->checkUser($this->uid, $this->email)) {
-            $result = true;
-        }else{
             $result = false;
+        }else{
+            $result = true;
         }
         return $result;
     }
