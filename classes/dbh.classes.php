@@ -6,7 +6,7 @@ class Dbh {
         try{
             $dBUsername = "root";
             $dBPassword = "";
-            $dbh = new PDO('mtsql:host=localhost; dbname=websiteproject', $dBUsername, $dBPassword);
+            $dbh = new PDO('mysql:host=localhost; dbname=websiteproject', $dBUsername, $dBPassword);
             return $dbh;
         }
         catch(PDOException $e){
