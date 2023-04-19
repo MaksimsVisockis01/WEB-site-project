@@ -4,28 +4,34 @@ class Users extends Dbh{
 
     public function userCheck() {
         $dbh = $this->connect();
-        $stmt = $dbh->prepare("SELECT * FROM users ORDER BY usersId DESC");
+        $stmt = $dbh->prepare("SELECT * FROM users WHERE user_type = 'user' ORDER BY usersId ASC ");
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
+        echo"
+        <div class='container'>
+		<div class='box'>
+			<h4 class='display-4 text-center'>Users</h4><br>
+        ";
+
         if (count($result)) {
-            $i = 0;
             echo '<table class="table table-striped">';
             echo '<thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">id</th>
                         <th scope="col">Name</th>
                         <th scope="col">Email</th>
+                        <th scope="col">Username</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>';
             echo '<tbody>';
             foreach ($result as $row) {
-                $i++;
                 echo '<tr>';
-                echo '<th scope="row">' . $i . '</th>';
+                echo '<th scope="row">' . $row['usersId'] . '</th>';
                 echo '<td>' . $row['usersName'] . '</td>';
                 echo '<td>' . $row['usersEmail'] . '</td>';
+                echo '<td>' . $row['usersUid'] . '</td>';
                 echo '<td>
                         <a href="update.php?id=' . $row['usersId'] . '" class="btn btn-success">Update</a>
                         <a href="php/delete.php?id=' . $row['usersId'] . '" class="btn btn-danger">Delete</a>
