@@ -30,7 +30,7 @@
 
 <nav>
     <ul class="menu">
-        <li class="logo"><a href="#">GameShop</a></li>
+        <li class="logo"><a href="index.php">GameShop</a></li>
         <li class="item"><a href="#">About</a></li>
         <li class="item"><a href="#">Forum</a></li>
         <li class="item"><a href="#">Services</a></li>
@@ -42,7 +42,7 @@
             ";
         }elseif(isset($_SESSION["adminid"])){
             echo"
-              <li class='item'><a href='#'>User Ctrl</a></li>
+              <li class='item'><a href='users.php'>User Ctrl</a></li>
               <li class='item button secondary'><a href='logout.php'>Logout</a></li>
             ";
         
