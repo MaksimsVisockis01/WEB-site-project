@@ -1,7 +1,6 @@
 <?php
 
 class Users extends Dbh{
-
     public function userCheck() {
         $dbh = $this->connect();
         $stmt = $dbh->prepare("SELECT * FROM users WHERE user_type = 'user' ORDER BY usersId ASC ");
@@ -13,6 +12,7 @@ class Users extends Dbh{
 		<div class='box'>
 			<h4 class='display-4 text-center'>Users</h4><br>
         ";
+
 
         if (count($result)) {
             echo '<table class="table table-striped">';
@@ -33,17 +33,13 @@ class Users extends Dbh{
                 echo '<td>' . $row['usersEmail'] . '</td>';
                 echo '<td>' . $row['usersUid'] . '</td>';
                 echo '<td>
-                        <a href="update.php?id=' . $row['usersId'] . '" class="btn btn-success">Update</a>
-                        <a href="php/delete.php?id=' . $row['usersId'] . '" class="btn btn-danger">Delete</a>
+                        <a href="update.php?usersId=' . $row['usersId'] . '" class="btn btn-success">Update</a>
+                        <a href="includes/delete.inc.php?usersId=' . $row['usersId'] . '" class="btn btn-danger">Delete</a>
                     </td>';
                 echo '</tr>';
             }
             echo '</tbody>';
             echo '</table>';
         }
-
-        echo '<div class="link-right">';
-        echo '<a href="index.php" class="link-primary">Create</a>';
-        echo '</div>';
     }
 }
