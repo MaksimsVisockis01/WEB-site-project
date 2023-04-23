@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/navbar.css">
+    
   </head>
 <body>
 
@@ -28,6 +29,7 @@
         }elseif(isset($_SESSION["adminid"])){
             echo"
               <li class='item'><a href='users.php'>User Ctrl</a></li>
+              <li class='item'><a href='gameAdd.php'>Add Game</a></li>
               <li class='item button secondary'><a href='logout.php'>Logout</a></li>
             ";
         
@@ -42,18 +44,4 @@
         <li class="toggle"><span class="bars"></span></li>
     </ul>
 </nav>
-<script>
-      const toggle = document.getElementsByClassName("toggle");
-      const item = document.querySelectorAll(".item");
-
-      item.forEach(navItem => { 
-        function toggleMenu() {
-            if (navItem.classList.contains("active") ){
-             navItem.classList.remove("active");
-            } else {
-                navItem.classList.add("active");
-            }
-        }
-        document.querySelector(".toggle").addEventListener("click", toggleMenu);
-    });
-    </script>
+<script src="js/navbar.js"></script>

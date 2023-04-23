@@ -1,5 +1,6 @@
 <?php
 include_once 'header.php';
+if(isset($_SESSION["adminid"])){
 ?>
 <link rel="stylesheet" href="css/style.css">
 
@@ -20,4 +21,8 @@ include_once 'header.php';
 
 <?php
 require_once 'includes/users.inc.php'; 
+
+}else{
+    header("Location: index.php");
+}
 ?>
