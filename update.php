@@ -15,6 +15,8 @@
 		      method="post">
             
 		   <h4 class="display-4 text-center">Update</h4><hr><br>
+
+		   	
 		   <?php
             require_once 'includes/update.inc.php'; 
             ?>

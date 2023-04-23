@@ -7,11 +7,6 @@ class Users extends Dbh{
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
-        echo"
-        <div class='container'>
-		<div class='box'>
-			<h4 class='display-4 text-center'>Users</h4><br>
-        ";
 
 
         if (count($result)) {

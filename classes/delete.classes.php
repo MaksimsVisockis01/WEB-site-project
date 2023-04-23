@@ -7,9 +7,9 @@ class Delete extends Dbh{
     $stmt = $dbh->prepare($sql);
     $stmt->execute();
    if ($stmt) {
-   	  header("Location: ../update.php?success=successfully deleted");
+   	  header("Location: ../users.php?success=successfully deleted");
    }else {
-      header("Location: ../update.php?error=unknown error occurred");
+      header("Location: ../users.php?error=unknown error occurred");
    }
     }
 }

@@ -40,9 +40,4 @@ if (isset($_GET['usersId'])) {
 }else {
     header("Location: users.php");
 }
-
-
-
-
-
 ?>
