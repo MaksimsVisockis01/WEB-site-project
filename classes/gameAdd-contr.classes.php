@@ -36,7 +36,7 @@ class GameContr extends Game{
     }
 
     private function emptyInput(){
-        if(empty($this->name) || empty($this->description) || empty($this->price) || $this->file_size <= 0){
+        if(empty($this->name) || empty($this->description) || empty($this->price) || $this->file_size <= 0 || $this->file_size > 2000000){
             $result = false;
         }
         else{
