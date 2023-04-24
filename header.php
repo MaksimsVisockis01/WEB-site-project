@@ -30,6 +30,7 @@
             echo"
               <li class='item'><a href='users.php'>User Ctrl</a></li>
               <li class='item'><a href='gameAdd.php'>Add Game</a></li>
+              <li class='item'><a href='gameList.php'>Game List</a></li>
               <li class='item button secondary'><a href='logout.php'>Logout</a></li>
             ";
         

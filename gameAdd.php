@@ -17,6 +17,7 @@ include_once 'header.php';
   <input type="file" id="file" name="file" accept="image/*"><br>
 
   <input type="submit" value="submit" name="submit">
+  <a href="gameList.php" class="back-link">Back to game list</a>
 </form>
 
 <?php 
