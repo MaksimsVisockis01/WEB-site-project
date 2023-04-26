@@ -13,10 +13,19 @@ if(isset($_POST["submit"]) && isset($_FILES['file']) && $_FILES['file']['error']
     include "../classes/gameAdd.classes.php";
     include "../classes/gameAdd-contr.classes.php";
     
-    $game = new GameContr($name, $description, $price, $file, $file_size);
-    $game->checkGame();
 
+    if ($file) {
+          $oldFilePath = '../GamePhotos/' . $file;
+          if (file_exists($oldFilePath)) {
+            header("location: ../gameAdd.php?error=Need new photo");
+          }
+        
+          $game = new GameContr($name, $description, $price, $file, $file_size);
+          $game->checkGame();
+        
     move_uploaded_file($tmp_image, "../GamePhotos/$file");
+    header("location: ../gameList.php?success=succesfully added");
+    }
+    
 
-    header("location: ../gameAdd.php?error=none");
 }

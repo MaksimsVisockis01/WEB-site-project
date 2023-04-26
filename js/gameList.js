@@ -3,8 +3,8 @@ function showImage(fileName) {
     var img = modal.querySelector("img");
     img.src = "GamePhotos/" + fileName;
     modal.style.display = "block";
-  }
+}
   
-  document.querySelector("#modal").onclick = function() {
-    this.style.display = "none";
-  }
+document.querySelector("#modal").onclick = function() {
+  this.style.display = "none";
+}

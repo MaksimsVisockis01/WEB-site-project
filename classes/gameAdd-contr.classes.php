@@ -57,7 +57,7 @@ class GameContr extends Game{
         $allowed_extensions = array("jpg", "jpeg", "png", "gif");
         $file_extension = pathinfo($this->file, PATHINFO_EXTENSION);
         
-        if (!in_array($file_extension, $allowed_extensions)) {
+        if (!in_array(strtolower($file_extension), $allowed_extensions)) {
             $result = false;
         } else {
             $result = true;

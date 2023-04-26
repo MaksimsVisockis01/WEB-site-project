@@ -32,8 +32,8 @@ class Games extends Dbh{
                     </div>
                 ';
                 echo '<td>
-                        <a href=".php?GameId=' . $row['GameId'] . '" class="btn btn-success">Update</a>
-                        <a href="includes/.inc.php?GameId=' . $row['GameId'] . '" class="btn btn-danger">Delete</a>
+                        <a href="updateList.php?GameId=' . $row['GameId'] . '" class="btn btn-success">Update</a>
+                        <a href="includes/deleteList.inc.php?GameId=' . $row['GameId'] . '" class="btn btn-danger">Delete</a>
                     </td>';
                 echo '</tr>';
             }
