@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 21, 2023 at 06:44 AM
+-- Generation Time: Apr 27, 2023 at 09:03 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -20,6 +20,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `websiteproject`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `game`
+--
+
+CREATE TABLE `game` (
+  `GameId` int(11) NOT NULL,
+  `Name` text NOT NULL,
+  `Discription` text NOT NULL,
+  `Price` float NOT NULL,
+  `FileName` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `game`
+--
+
+INSERT INTO `game` (`GameId`, `Name`, `Discription`, `Price`, `FileName`) VALUES
+(25, 'rgrgr', 'rgrgr', 2, 'IMG_20230410_223929.jpg'),
+(26, 'erfg', 'rrgrgr', 2, 'image-10.png'),
+(27, 'gjhgj', 'gjg', 3, 'image-10.png');
 
 -- --------------------------------------------------------
 
@@ -41,12 +64,18 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`usersId`, `usersName`, `usersEmail`, `usersUid`, `usersPwd`, `user_type`) VALUES
-(1, 'Kirils', 'wghuiwehg@gmail.com', '123', '$2y$10$zqIuFZT9qN70YMmewnMz0.QbwS885ulQSfGRlD22wBKISk3jjqSXK', 'user'),
+(1, 'Kirilss', 'wghuiwehg@gmail.com', '123', '$2y$10$zqIuFZT9qN70YMmewnMz0.QbwS885ulQSfGRlD22wBKISk3jjqSXK', 'user'),
 (4, 'admin', 'admin@gmail.com', 'admin', '$2y$10$sCTItiB1HpI.7kM8xY0yyeaB/XcZrcGKBiuh2TWZxk.NrpMTyfnfe', 'admin');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `game`
+--
+ALTER TABLE `game`
+  ADD PRIMARY KEY (`GameId`);
 
 --
 -- Indexes for table `users`
@@ -59,10 +88,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `game`
+--
+ALTER TABLE `game`
+  MODIFY `GameId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `usersId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `usersId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
