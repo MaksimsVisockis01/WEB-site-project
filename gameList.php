@@ -6,7 +6,7 @@ include_once 'header.php';
 <link rel="stylesheet" href="css/gameList.css">
 <div class='container'>
 	<div class='box'>
-		<h4 class='display-4 text-center'>Game List</h4><br>
+		<h4 class='display-4 text-center'>List</h4><br>
             <?php if (isset($_GET['error'])) { ?>
 		        <div class="alert alert-danger" role="alert">
 			<?php echo $_GET['error']; ?>
